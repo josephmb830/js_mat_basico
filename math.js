@@ -45,6 +45,23 @@ function calcularAlturaTriangulo(lado1, base) {
   }
 }
 
+function calcularAlturaTrianguloEscaleno(a, b, c) {
+  if (a == b || b == c || c == a) {
+    return false;
+  } else {
+    // Calcular el semiperímetro
+    var s = (a + b + c) / 2;
+
+    // Calcular el área con la fórmula de Herón
+    var area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+    // Calcular la altura con la fórmula general
+    var altura = (2 * area) / a;
+
+    return parseInt(altura.toFixed(0));
+  }
+}
+
 console.log({
   ladoTriangulo1,
   ladoTriangulo2,
